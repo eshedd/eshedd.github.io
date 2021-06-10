@@ -19,22 +19,23 @@
             </style>
         </head>
     <body>
-        <audio controls autoplay loop>
-            <source src="../sounds/blitzkrieg-bop.mp3" type="audio/ogg"> 
-        </audio>
+        <!-- <iframe src="silence.mp3" allow="autoplay" id="audio"></iframe> -->
         <!-- <iframe src="../sounds/blitzkrieg-bop.mp3" allow="autoplay" style="display:none" id="iframeAudio">
         </iframe>  -->
         <!-- <embed name="BlitzkriegBop" src="../sounds/wow.wav" loop="true" hidden="true" autostart="true"> -->
         <script>
             function play(){
-                 var audio = document.getElementById("audio");
-                 audio.play();
+                 var scoot = document.getElementById("scoot");
+                 var blitz = document.getElementById("blitz");
+                 scoot.play();
+                 blitz.play();
             }
         </script>
-        <div class="container" style="height: 100vh;" value="PLAY" onclick="play()">
+        <div class="container" style="height: 100vh;" onclick="play()">
             <h1>Tony Hawk</h1>
             <h1>Tribute Page</h1>
         </div>
-        <audio id="audio" src="../sounds/grind.wav" ></audio>
+        <audio id="scoot" src="../sounds/grind.wav" ></audio>
+        <audio id="blitz" src="../sounds/blitzkrieg-bop.mp3" ></audio>
     </body>
 </html>
