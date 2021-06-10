@@ -14,16 +14,85 @@
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             text-shadow:0px 2px 4px #FFF;
         }
+        
+        .div1 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap:nowrap;
+        }
+
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+        }
+        #toggle {
+            height: 32px;
+            width: 52px;
+            border-radius: 16px;
+            display: inline-block;
+            position: relative;
+            border: 2px solid steelblue;
+            background: linear-gradient(90deg, steelblue 0%, grey 100%);
+            transition: all .2s ease;
+        }
+        #toggle:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 1px 3px black;
+            transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+        }
+        #toggle:checked {
+            border-color: black;
+        }
+        #toggle:checked:after {
+            transform: translatex(20px)
+        }
+                
     </style>
+    <script>
+        function change() {
+            var toggle = document.getElementById('toggle');
+            var title = document.getElementById('title').style;
+            var img = document.getElementById("img").style;
+            if (toggle.checked) {
+                title.color = "black";
+                title.fontFamily = "'Courier New', Courier, monospace"
+                title.textShadow = "0px 0px 0px black";
+                document.body.style.backgroundColor = "white";
+                img.borderRadius = "0px";
+                img.border = "0px";
+            } else {
+                title.color = "steelblue";
+                title.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+                title.textShadow = "0px 2px 4px #FFF";
+                document.body.style.backgroundColor = "lightblue";
+                img.borderRadius = "10px";
+                img.border = "5px solid #555";
+            }
+        }
+        
+    </script>
 </head>
 
 <body>
-    <h1>Ethan Shedd</h1>
-    <img style="width:700px;height:550px;border: 5px solid #555;border-radius:10px;" src="images/FEETMAP.jpeg" alt="psst click the toe" usemap="#Map" />
-    <map name="Map" id="Map">
-        <area alt="big toe" title="" href="subpage/hawkers.html" shape="rect"
-            coords="213,90,309,226"/>
-    </map>
+    <h1 id="title">Ethan Shedd</h1>
+    <div class="div1">
+        <img id="img" style="width:700px;height:550px;border: 5px solid #555;border-radius:10px;" src="images/FEETMAP.jpeg" alt="psst click the toe" usemap="#Map" />
+        <map name="Map" id="Map">
+            <area alt="big toe" title="" href="subpage/hawkers.html" shape="rect"
+                coords="213,90,309,226"/>
+        </map>
+        <input type="checkbox" id="toggle" onclick="change();">
+    </div>
 </body>
 
 </html>
