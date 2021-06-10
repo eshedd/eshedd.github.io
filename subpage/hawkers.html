@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Page Title</title>
+            <style>
+                html {
+                    cursor:url(../images/scooter.png), auto;
+                }
+                body {
+                    background:url(../images/hawkers-fire.jpg);
+                }
+                h1 {
+                    text-align: center;
+                    font-family:'Times New Roman', Times, serif;
+                    color: black;
+                    text-shadow: 0px -2px 4px #FF3, 0px -2px 10px #C33;
+                    font-size: 100px;
+                }
+            </style>
+        </head>
+    <body>
+        <script>
+            function play(){
+                 var audio = document.getElementById("audio");
+                 audio.play();
+                           }
+        </script>
+        <div class="container" style="height: 100vh;" value="PLAY" onclick="play()">
+            <h1>Tony Hawk</h1>
+            <h1>Tribute Page</h1>
+        </div>
+        <audio id="audio" src="../sounds/grind.wav" ></audio>
+    </body>
+</html>
