@@ -66,6 +66,15 @@
         function play(){
             var elegant = document.getElementById("elegant");
             elegant.play();
+            setTimeout(function() { 
+                alert("Have you heard of \"up dog\"?"); 
+            }, 19000);
+            setTimeout(function() { 
+                document.getElementById("reveal1").style.display = "block";
+            }, 26000);
+            setTimeout(function() { 
+                document.getElementById("reveal2").style.display = "block";
+            }, 41500);
         }
         function change() {
             var toggle = document.getElementById('toggle');
@@ -93,6 +102,8 @@
 
 <body>
     <h1 id="title">Ethan Shedd</h1>
+    <h1 id="reveal1" style="display: none;">What's up dog?</h2>
+    <h1 id="reveal2" style="display: none;">Not much, you?</h2>
     <div class="div1">
         <img id="img" style="width:700px;height:550px;border: 5px solid #555;border-radius:10px;" 
             src="images/FEETMAP.jpeg" alt="psst click the toe" usemap="#Map" />
