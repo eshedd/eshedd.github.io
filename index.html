@@ -21,6 +21,10 @@
             flex-wrap:nowrap;
         }
 
+        #pinkytoe:hover {
+            cursor:none;
+        }
+
         input[type="checkbox"] {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -59,6 +63,10 @@
                 
     </style>
     <script>
+        function play(){
+            var elegant = document.getElementById("elegant");
+            elegant.play();
+        }
         function change() {
             var toggle = document.getElementById('toggle');
             var title = document.getElementById('title').style;
@@ -86,13 +94,17 @@
 <body>
     <h1 id="title">Ethan Shedd</h1>
     <div class="div1">
-        <img id="img" style="width:700px;height:550px;border: 5px solid #555;border-radius:10px;" src="images/FEETMAP.jpeg" alt="psst click the toe" usemap="#Map" />
+        <img id="img" style="width:700px;height:550px;border: 5px solid #555;border-radius:10px;" 
+            src="images/FEETMAP.jpeg" alt="psst click the toe" usemap="#Map" />
         <map name="Map" id="Map">
-            <area alt="big toe" title="" href="subpage/hawkers.html" shape="rect"
+            <area alt="big toe" href="subpage/hawkers.html" shape="rect"
                 coords="213,90,309,226"/>
+            <area id="pinkytoe" alt="pinky toe" onclick="play();" shape="rect"
+                coords="469,227,509,311"/>
         </map>
         <input type="checkbox" id="toggle" onclick="change();">
     </div>
+    <audio id="elegant" src="sounds/danse-macabre.mp3" ></audio>
 </body>
 
 </html>
