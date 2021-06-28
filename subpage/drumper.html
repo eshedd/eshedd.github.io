@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title></title>
+            <style>
+                html {
+                    cursor:url(../images/drumstick.png), auto;
+                }
+                body {
+                    background: teal;
+                }
+                h1 {
+                    text-align: center;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    color: white;
+                    text-shadow: 0px -2px 4px lightcoral;
+                    font-size: 100px;
+                }
+            </style>
+        </head>
+    <body>
+        <!-- <iframe src="silence.mp3" allow="autoplay" id="audio"></iframe> -->
+        <!-- <iframe src="../sounds/blitzkrieg-bop.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+        </iframe>  -->
+        <!-- <embed name="BlitzkriegBop" src="../sounds/wow.wav" loop="true" hidden="true" autostart="true"> -->
+        <script>
+            function play(num){
+                 var kicker = document.getElementById("kicker");
+                 var tom1 = document.getElementById("tom1");
+                 var tom2 = document.getElementById("tom2");
+                 var cymbal = document.getElementById("cymbal");
+                 if(num==1) {
+                     kicker.play();
+                 } else if (num==2) {
+                     tom1.play();
+                 } else if (num==3) {
+                     tom2.play();
+                 } else if (num==4) {
+                     cymbal.play();
+                 }
+            }
+        </script>
+        <div class="container" style="height: 100vh;" onclick="play()">
+            <h1>Real Life Drum Simulator</h1>
+        </div>
+        <div class="div1">
+            <img id="img" style="width:700px;height:550px;border: 5px solid black;" 
+                src="../images/skinz.png" alt="beat them skinz" usemap="#Map" />
+            <map name="Map" id="Map">
+                <area alt="kicker" onclick="play(1);" shape="rect"
+                    coords="282, 244, 505, 471"/>
+                <area alt="tom1" onclick="play(2);" shape="rect"
+                    coords="239, 104, 370, 192"/>
+                <area alt="tom2" onclick="play(3);" shape="rect"
+                    coords="525, 203, 700, 369"/>
+                <area alt="cymbal" onclick="play(4);" shape="rect"
+                    coords="300, 40, 450, 90"/>
+            </map>
+        </div>
+        <audio id="kicker" src="../sounds/kicker.wav"></audio>
+        <audio id="tom1" src="../sounds/tom1.wav"></audio>
+        <audio id="tom2" src="../sounds/tom2.wav"></audio>
+        <audio id="cymbal" src="../sounds/cymbal.wav"></audio>
+    </body>
+</html>

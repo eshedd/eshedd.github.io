@@ -78,22 +78,25 @@
         }
         function change() {
             var toggle = document.getElementById('toggle');
-            var title = document.getElementById('title').style;
             var img = document.getElementById("img").style;
-            if (toggle.checked) {
-                title.color = "black";
-                title.fontFamily = "'Courier New', Courier, monospace"
-                title.textShadow = "0px 0px 0px black";
-                document.body.style.backgroundColor = "white";
-                img.borderRadius = "0px";
-                img.border = "0px";
-            } else {
-                title.color = "steelblue";
-                title.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
-                title.textShadow = "0px 2px 4px #FFF";
-                document.body.style.backgroundColor = "lightblue";
-                img.borderRadius = "10px";
-                img.border = "5px solid #555";
+            var titles = document.getElementsByTagName('H1');
+            for(i = 0; i < titles.length; i++) {
+                var title = titles[i];
+                if (toggle.checked) {
+                    title.color = "black";
+                    title.fontFamily = "'Courier New', Courier, monospace"
+                    title.textShadow = "0px 0px 0px black";
+                    document.body.style.backgroundColor = "white";
+                    img.borderRadius = "0px";
+                    img.border = "0px";
+                } else {
+                    title.color = "steelblue";
+                    title.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+                    title.textShadow = "0px 2px 4px #FFF";
+                    document.body.style.backgroundColor = "lightblue";
+                    img.borderRadius = "10px";
+                    img.border = "5px solid #555";
+                }
             }
         }
         
@@ -110,6 +113,8 @@
         <map name="Map" id="Map">
             <area alt="big toe" href="subpage/hawkers.html" shape="rect"
                 coords="213,90,309,226"/>
+            <area alt="longest toe" href="subpage/drumper.html" shape="rect"
+                coords="307,72,367,235"/>
             <area id="pinkytoe" alt="pinky toe" onclick="play();" shape="rect"
                 coords="469,227,509,311"/>
         </map>
