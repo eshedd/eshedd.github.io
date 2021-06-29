@@ -22,6 +22,29 @@
                     margin-right: auto;
                     display: block;
                 }
+                #first{
+                    height:400px;
+                    position:absolute;
+                }
+                #input{
+                    height:20px;
+                    border:2px solid blue;
+                    position: relative;
+                    top: 410px;
+                }
+                #dialogue {
+                    font-size: 20px;
+                    width: 500px;
+                    color: white;
+                    text-shadow: 2px -1px 0px black;
+                    font-family: fantasy;
+                }
+                h2 {
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    color: white;
+                    text-shadow: 0px -1px 3px lightcoral;
+                    font-size: 25px;
+                }
             </style>
         </head>
     <body>
@@ -64,6 +87,18 @@
                 var wow = document.getElementById("wow");
                 wow.play();
             }
+            function search(ele) {
+                if(event.key === 'Enter') {
+                    if(String(ele.value) === '') {
+                        document.getElementById("dialogue").innerHTML = "\"Cool, cool, cool.\"";
+                    } else {
+                    document.getElementById("dialogue").innerHTML = "\"Dude! I love " + 
+                        String(ele.value).toUpperCase() + ", too!\"";
+                    }
+                    var wow = document.getElementById("wow");
+                    wow.play();
+                }
+            }
         </script>
         <h1>Real Life Drum Simulator</h1>
         <div id="div1" style="position:absolute; width:100%; height:100%">
@@ -86,13 +121,21 @@
                     coords="8, 128, 146, 212"/>
             </map>
         </div>
-        <audio id="kicker" src="../sounds/kicker.wav"></audio>
-        <audio id="tom1" src="../sounds/tom1.wav"></audio>
-        <audio id="tom2" src="../sounds/tom2.wav"></audio>
-        <audio id="tom3" src="../sounds/tom3.m4a"></audio>
-        <audio id="snare" src="../sounds/snare.wav"></audio>
-        <audio id="cymbal" src="../sounds/cymbal.wav"></audio>
-        <audio id="hihat" src="../sounds/hihat.wav"></audio>
-        <audio id="wow" src="../sounds/wow.wav"></audio>
+        <div id="roadie">
+            <h2>Real Life Roadie Sub-Simulator</h2>
+            <img id="first" src="../images/roadie.gif">
+            <p id="dialogue">"Dude! What's your favorite music?!"</p>
+            <input type="text" placeholder="Enter any music here" id="input" onkeydown="search(this)"/>  
+        </div>
+        <div class="audio">
+            <audio id="kicker" src="../sounds/kicker.wav"></audio>
+            <audio id="tom1" src="../sounds/tom1.wav"></audio>
+            <audio id="tom2" src="../sounds/tom2.wav"></audio>
+            <audio id="tom3" src="../sounds/tom3.m4a"></audio>
+            <audio id="snare" src="../sounds/snare.wav"></audio>
+            <audio id="cymbal" src="../sounds/cymbal.wav"></audio>
+            <audio id="hihat" src="../sounds/hihat.wav"></audio>
+            <audio id="wow" src="../sounds/wow.wav"></audio>
+        </div>
     </body>
 </html>
