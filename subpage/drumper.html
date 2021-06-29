@@ -8,6 +8,7 @@
                 }
                 body {
                     background: teal;
+                    margin: 0;
                 }
                 h1 {
                     text-align: center;
@@ -15,6 +16,11 @@
                     color: white;
                     text-shadow: 0px -2px 4px lightcoral;
                     font-size: 100px;
+                }
+                #div1 img {
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
                 }
             </style>
         </head>
@@ -26,39 +32,42 @@
         <script>
             var smackCount;
             function play(num){
-                 var kicker = document.getElementById("kicker");
-                 var tom1 = document.getElementById("tom1");
-                 var tom2 = document.getElementById("tom2");
-                 var cymbal = document.getElementById("cymbal");
-                 var hihat = document.getElementById("hihat");
-                 if(num==1) {
-                     kicker.play();
-                 } else if (num==2) {
-                     tom1.play();
-                 } else if (num==3) {
-                     tom2.play();
-                 } else if (num==4) {
-                     cymbal.play();
+                var kicker = document.getElementById("kicker");
+                var tom1 = document.getElementById("tom1");
+                var tom2 = document.getElementById("tom2");
+                var tom3 = document.getElementById("tom3");
+                var cymbal = document.getElementById("cymbal");
+                var hihat = document.getElementById("hihat");
+                if(num==1) {
+                    kicker.play();
+                } else if (num==2) {
+                    tom1.play();
+                } else if (num==3) {
+                    tom2.play();
+                } else if (num==4) {
+                    cymbal.play();
                 } else if (num==5) {
-                     hihat.play();
-                 } else {
-                     return;
-                 }
-                 smackCount++;
-                 if(smackCount % 5 == 0) {
+                    hihat.play();
+                } else if (num==6) {
+                    tom3.play();
+                } else if (num==7) {
+                    snare.play();
+                } else {
+                    return;
+                }
+                smackCount++;
+                if(smackCount % 5 == 0) {
                     spawnDancer();
-                 }
+                }
             }
             function spawnDancer() {
                 var wow = document.getElementById("wow");
                 wow.play();
             }
         </script>
-        <div class="container" style="height: 100vh;" onclick="play()">
-            <h1>Real Life Drum Simulator</h1>
-        </div>
-        <div class="div1">
-            <img id="img" style="width:700px;height:550px;border: 5px solid black;" 
+        <h1>Real Life Drum Simulator</h1>
+        <div id="div1" style="position:absolute; width:100%; height:100%">
+            <img id="img" style="width:700px;height:550px;" 
                 src="../images/skinz.png" alt="beat them skinz" usemap="#Map" />
             <map name="Map" id="Map">
                 <area alt="kicker" onclick="play(1);" shape="rect"
@@ -67,6 +76,10 @@
                     coords="239, 104, 370, 192"/>
                 <area alt="tom2" onclick="play(3);" shape="rect"
                     coords="525, 203, 700, 369"/>
+                <area alt="tom3" onclick="play(6);" shape="rect"
+                    coords="407, 84, 560, 203"/>
+                <area alt="snare" onclick="play(7);" shape="rect"
+                    coords="32, 205, 279, 288"/>
                 <area alt="cymbal" onclick="play(4);" shape="rect"
                     coords="300, 40, 450, 90"/>
                 <area alt="hihat" onclick="play(5);" shape="rect"
@@ -76,6 +89,8 @@
         <audio id="kicker" src="../sounds/kicker.wav"></audio>
         <audio id="tom1" src="../sounds/tom1.wav"></audio>
         <audio id="tom2" src="../sounds/tom2.wav"></audio>
+        <audio id="tom3" src="../sounds/tom3.m4a"></audio>
+        <audio id="snare" src="../sounds/snare.wav"></audio>
         <audio id="cymbal" src="../sounds/cymbal.wav"></audio>
         <audio id="hihat" src="../sounds/hihat.wav"></audio>
         <audio id="wow" src="../sounds/wow.wav"></audio>
