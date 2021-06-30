@@ -3,30 +3,46 @@
         <head>
             <title>👤</title>
             <style>
-                img {
+                #img {
                     width: 100%;
                     border: 3px solid black;
                 }
             </style>
+            <script>
+                function play(num) {
+                    var apeNoise = document.getElementById("ape");
+                    var laugh = document.getElementById("laugh");
+                    if (num == 1) {
+                        apeNoise.play();
+                    } else if(num == 2) {
+                        laugh.play();
+                    }
+                    
+                }
+            </script>
         </head>
     <body>
-        <script>
-            function play() {
-                alert("test");
-            }
-        </script>
         <h1>Autobiography - A Self Memoir</h1>
         <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
             <marquee style="font-size:20px;" behavior="alternate">
-                At a young age, my biological family sold me to a traveling circus where I was raised on ape milk and ordered to do backflips for spare change.
+                At a young age, my biological family sold me to a <a href="https://en.wikipedia.org/wiki/Circus">traveling circus</a> where I was raised on <a href="https://en.wikipedia.org/wiki/Roman_Charity">ape milk</a> and ordered to do backflips for spare change.
             </marquee>
         </marquee>
-        <img src="../images/sad-ape.jpg"/>
+        <input type="image" id="img" onclick="play(1)" src="../images/sad-ape.jpg"/>
         <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
             <marquee style="font-size:20px;" behavior="alternate">
                 After escaping with the French gibbon I was seeing at the time, I traveled the world. Her name was Darla.
             </marquee>
         </marquee>
-        <img src="../images/darla.jpg"/>
+        <input type="image" id="img" onclick="play(1)" src="../images/darla.jpg"/>
+        <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
+            <marquee style="font-size:20px;" behavior="alternate">
+                Sadly, I was swindled into giving up Darla during a risky bocce ball gambling stint to some balding men. I never saw her again.
+            </marquee>
+        </marquee>
+        <input type="image" id="img" onclick="play(2)" src="../images/bocce-ball.jpg"/>
+
+        <audio id="ape" src="../sounds/ape.wav"></audio>
+        <audio id="laugh" src="../sounds/evil-laugh.wav"></audio>
     </body>
 </html>
