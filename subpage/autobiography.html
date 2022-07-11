@@ -16,6 +16,8 @@
                         apeNoise.play();
                     } else if(num == 2) {
                         laugh.play();
+                    } else if(num == 3) {
+                        shred.play();
                     }
                     
                 }
@@ -25,23 +27,30 @@
         <h1>Autobiography - A Self Memoir</h1>
         <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
             <marquee style="font-size:20px;" behavior="alternate">
-                At a young age, my biological family sold me to a where I was raised on ape milk and ordered to do backflips for spare change. </marquee>
+                At a young age, my greedy biological family sold me to a Dutch traveling circus where I was raised on ape milk and coerced to do backflips for euros. </marquee>
         </marquee>
         <input type="image" id="img" onclick="play(1)" src="../images/sad-ape.jpg"/>
         <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
             <marquee style="font-size:20px;" behavior="alternate">
-                After escaping with the French gibbon I was seeing at the time, I traveled the world. Her name was Darla.
+                The bars couldn't hold me long. After escaping with the French gibbon I was seeing at the time, I traveled the world. Her name was Darla.
             </marquee>
         </marquee>
         <input type="image" id="img" onclick="play(1)" src="../images/darla.jpg"/>
         <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
             <marquee style="font-size:20px;" behavior="alternate">
-                Sadly, I was swindled into giving up Darla during a risky bocce ball gambling stint to some balding men. I never saw her again.
+                But too soon, I was swindled into giving up Darla to some balding men in a high-stakes bocce ball game. I never saw her again.
             </marquee>
         </marquee>
         <input type="image" id="img" onclick="play(2)" src="../images/bocce-ball.jpg"/>
+        <marquee direction="down" width="100%" height="200" behavior="alternate" style="border:solid">
+            <marquee style="font-size:20px;" behavior="alternate">
+                Once the portraits Darla and I had painted together were shredded and I had recuperated emotionally, I set off for new lands: the USA.
+            </marquee>
+        </marquee>
+        <input type="image" id="img" onclick="play(3)" src="../images/monkey.jpg"/>
 
         <audio id="ape" src="../sounds/ape.wav"></audio>
         <audio id="laugh" src="../sounds/evil-laugh.wav"></audio>
+        <audio id="shred" src="../sounds/shreddin.mp3"></audio>
     </body>
 </html>
