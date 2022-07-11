@@ -18,6 +18,7 @@
             text-align: center;
             display: none;
             margin-top: 10%;
+            position: relative;
         }
 
         .image-wrapper {
@@ -27,7 +28,20 @@
             position: absolute;
             top: 0;
             left: 0;
+            width: 50%;
         }
+
+        .button {
+            color: white;
+            font-size: 50px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-shadow:0px 2px 4px black;
+            background-color: orange;
+            border: 4px solid black;
+            border-radius: 20px;
+            cursor:grab;
+        }
+
     </style>
     
 </head>
@@ -37,8 +51,11 @@
             <video style="border: 5px solid black; background-color: rgb(105, 105, 105);" id="video" width="320" height="240" autoplay></video>
         </div>
         <div id="frame">
-            <button id="start-camera">Start Camera</button> 
-            <button style="display: none" id="click-photo">Oldify Me!</button> 
+            <button style= "margin-top: 20px" id="start-camera" class="button">Oldify Me!</button> 
+            <button style="display: none; margin-top: 20px;" id="click-photo" class="button">Snap Photo</button> 
+        </div>
+        <div id="frame">
+            <img id="example" style="margin-top: 100px; border: 2px solid black;" src="../images/transform.jpg">
         </div>
         <div id="frame" class="image-wrapper">
             <canvas class="overlay" id="canvas" style="display:none;" width="640" height="480"></canvas>
@@ -57,6 +74,7 @@
         const timer = ms => new Promise(res => setTimeout(res, ms))
         let camera_button = document.querySelector("#start-camera");
         let video = document.querySelector("#video");
+        let example = document.querySelector("#example");
         let photo_button = document.querySelector("#click-photo");
         let canvas = document.querySelector("#canvas");
         let warning = document.querySelector(".spooky");
@@ -78,6 +96,7 @@
             document.body.style.backgroundColor = "black";
             suspense.play();
             photo_button.style.display = "none";
+            example.style.display = "none";
             await timer(2250);
             warning.style.display = "block";
             await timer(4000);
