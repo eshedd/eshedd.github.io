@@ -2,27 +2,24 @@
 <html>
 
 <head>
-    <title>🌊</title>
+    <title>🖐</title>
     <style>
         body {
-            background-color: lightblue;
+            background-color: orange;
+            background-image: none;
         }
 
         h1 {
-            color: steelblue;
+            color: rgb(255, 222, 5);
             font-size: 50px;
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            text-shadow:0px 2px 4px #FFF;
+            text-shadow:0px 2px 4px black;
         }
         
         .div1 {
             display: flex;
             flex-direction: column;
             flex-wrap:nowrap;
-        }
-
-        #pinkytoe:hover {
-            cursor:none;
         }
 
         input[type="checkbox"] {
@@ -38,8 +35,8 @@
             border-radius: 16px;
             display: inline-block;
             position: relative;
-            border: 2px solid white;
-            background: linear-gradient(90deg, grey 0%, steelblue 100%);
+            border: 2px solid black;
+            background: linear-gradient(90deg, grey 0%, rgb(255, 222, 5) 100%);
             transition: all .2s ease;
         }
         #toggle:after {
@@ -51,6 +48,7 @@
             height: 24px;
             border-radius: 50%;
             background: white;
+            /* background: rgb(255, 233, 88) */
             box-shadow: 0 1px 3px black;
             transition: all .2s cubic-bezier(.5,.1,.75,1.35);
         }
@@ -60,22 +58,9 @@
         #toggle:checked:after {
             transform: translatex(20px)
         }
-                
+
     </style>
     <script>
-        function play(){
-            var elegant = document.getElementById("elegant");
-            elegant.play();
-            setTimeout(function() { 
-                alert("Have you heard of \"up dog\"?"); 
-            }, 19000);
-            setTimeout(function() { 
-                document.getElementById("reveal1").style.display = "block";
-            }, 26000);
-            setTimeout(function() {
-                document.getElementById("reveal2").style.display = "block";
-            }, 41500);
-        }
         function change() {
             var toggle = document.getElementById('toggle');
             var img = document.getElementById("img").style;
@@ -83,48 +68,36 @@
             for(i = 0; i < titles.length; i++) {
                 var title = titles[i];
                 if (toggle.checked) {
-                    title.style.color = "black";
-                    title.style.fontFamily = "'Courier New', Courier, monospace"
+                    title.innerHTML = "李一蛋"
+                    title.style.color = "rgb(255, 233, 88)";
+                    title.style.fontFamily = "STFangsong, 'Microsoft Yahei', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
                     title.style.textShadow = "0px 0px 0px black";
-                    document.body.style.backgroundColor = "white";
-                    img.borderRadius = "0px";
-                    img.border = "0px";
+                    document.body.style.backgroundImage = 'url("../images/stars.png"), url("../images/newyear.png")';
+                    // img.borderRadius = "0px";
+                    // img.border = "0px";
+                    img.border = "5px solid rgb(255, 222, 5)";
                 } else {
-                    title.style.color = "steelblue";
+                    title.innerHTML = "Ethan Shedd?"
+                    title.style.color = "rgb(255, 222, 5)";
                     title.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
-                    title.style.textShadow = "0px 2px 4px #FFF";
-                    document.body.style.backgroundColor = "lightblue";
-                    img.borderRadius = "10px";
+                    title.style.textShadow = "0px 2px 4px black";
+                    document.body.style.backgroundColor = "orange";
+                    document.body.style.backgroundImage = "none";
                     img.border = "5px solid #555";
                 }
             }
         }
-
     </script>
 </head>
 
 <body>
-    <h1 id="title">Ethan Shedd</h1>
+    <h1 id="title">Ethan Shedd?</h1>
+    <!-- <h1 id="title">李一蛋</h1> -->
     <h1 id="reveal1" style="display: none;">What's "up dog"?</h2>
     <h1 id="reveal2" style="display: none;">Not much, you?</h2>
     <div class="div1">
         <img id="img" style="width:700px;height:550px;border: 5px solid #555;border-radius:10px;" 
-            src="images/FEETMAP.jpeg" alt="psst click the toe" usemap="#Map" />
-        <map name="Map" id="Map">
-            <area alt="big toe" href="subpage/hawkers.html" shape="rect"
-                coords="213,90,309,226"/>
-            <area alt="longest toe" href="subpage/drumper.html" shape="rect"
-                coords="307,72,367,235"/>
-            <area alt="middle toe" href="subpage/手.html" shape="rect"
-                coords="374,105,420,246"/>
-            <area alt="ring toe" href="subpage/autobiography.html" shape="rect"
-                coords="424,153,469,291"/>
-            <area id="pinkytoe" alt="pinky toe" onclick="play();" shape="rect"
-                coords="469,227,509,311"/>
-        </map>
+            src="../images/HANDMAP1.jpg" alt="psst click the toe" usemap="#Map" />
         <input type="checkbox" id="toggle" onclick="change();">
     </div>
-    <audio id="elegant" src="sounds/danse-macabre.mp3" ></audio>
 </body>
-
-</html>
