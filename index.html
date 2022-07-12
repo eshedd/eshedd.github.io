@@ -63,27 +63,48 @@
                 
     </style>
     <script>
-        function play(){
-            title.innerHTML = "Don't press anything. Be patient."
+        const timer = ms => new Promise(res => setTimeout(res, ms));
+        async function play(){
             var elegant = document.getElementById("elegant");
             elegant.play();
+            await timer(1000);
+            title.innerHTML = "Ethan Shed";
+            await timer(1550);
+            title.innerHTML = "Ethan She";
+            await timer(1550);
+            title.innerHTML = "Ethan Sh";
+            await timer(1550);
+            title.innerHTML = "Ethan S";
+            await timer(1550);
+            title.innerHTML = "Ethan";
+            await timer(1550);
+            title.innerHTML = "Etha";
+            await timer(1550);
+            title.innerHTML = "Eth";
+            await timer(1550);
+            title.innerHTML = "Et";
+            await timer(1550);
+            title.innerHTML = "E";
+            await timer(1550);
+            title.innerHTML = "";
             setTimeout(function() { 
-                alert("Have you heard of \"up dog\"?"); 
-            }, 19000);
+                alert("Have you heard of \"up dog\"?");
+            }, 4050);
             setTimeout(function() { 
                 document.getElementById("reveal1").style.display = "block";
-            }, 26500);
+            }, 11550);
             setTimeout(function() {
                 document.getElementById("reveal2").style.display = "block";
-            }, 41500);
+            }, 26550);
             setTimeout(function() {
                 document.getElementById("reveal3").style.display = "block";
-            }, 55500);
+            }, 40550);
         }
         function change() {
             var toggle = document.getElementById('toggle');
             var img = document.getElementById("img").style;
             var titles = document.getElementsByTagName('H1');
+            var hint = document.getElementById("hint");
             for(i = 0; i < titles.length; i++) {
                 var title = titles[i];
                 if (toggle.checked) {
@@ -102,6 +123,7 @@
                     img.border = "5px solid #555";
                 }
             }
+            hint.style.display = "block";
         }
 
     </script>
@@ -128,6 +150,7 @@
                 coords="469,227,509,311"/>
         </map>
         <input type="checkbox" id="toggle" onclick="change();">
+        <p id="hint" style="font-size: 15px; font-family: 'Courier New', Courier, monospace; display: none">(hint: click on the toes)</p>
     </div>
     <audio id="elegant" src="sounds/danse-macabre.mp3"></audio>
 </body>

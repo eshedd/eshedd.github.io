@@ -64,6 +64,9 @@
         <div>
             <h1 class="spooky">Harvesting picture...</h1>
         </div>
+        <div id="frame">
+            <a href="https://www.bing.com/maps"><img class="social" style="display: none; height: 100px; width: 100px; margin-top:20px; position: absolute;" src="../images/twitter.png"></a>
+        </div>
     </div>
     
 
@@ -79,9 +82,11 @@
         let canvas = document.querySelector("#canvas");
         let warning = document.querySelector(".spooky");
         let beard = document.querySelector("#beard");
+        let social = document.querySelector(".social");
 
         camera_button.addEventListener('click', async function() {
             camera_button.style.display = "none";
+            await timer(2000);
             photo_button.style.display = "block";
             let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
             video.srcObject = stream;
@@ -111,8 +116,11 @@
             scream.play();
             canvas.style.display = "block";
             beard.style.display = "block";
-            await timer(2000);
+            await timer(1500);
             warning.innerHTML = "You've been oldify-ed.";
+            await timer(4500);
+            warning.innerHTML = "Share with your friends!";
+            social.style.display = "block";
         });
     </script>
 </body>
