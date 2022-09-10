@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            cursor:url(../images/crosshair.png), auto;
+        }
+        body {
+            background-image: url("../underground.png");
+            background-repeat: no-repeat;
+            background-size: 100% 75%;
+        }
+
+    </style>
+    <script>
+        const timer = ms => new Promise(res => setTimeout(res, ms))
+        isKiller = false;
+        async function shoot() {
+            var bonk = document.getElementById("bonk");
+            bonk.play();
+            await timer(10000);
+            alert("great job!");
+        }
+        function hit() {
+            var scream = document.getElementById("scream");
+            confirm1 = confirm("You're going to shoot him?");
+            if (confirm1) {
+                confirm2 = confirm("You're absolutely sure? There's nothing wrong with hitting 'Cancel' instead.");
+                if (confirm2) {
+                    confirm3 = confirm("Last chance. Whatever happens is on your hands.");
+                    if (confirm3) {
+                        scream.play();
+                        isKiller = true;
+                    }
+                }
+            }
+        }
+        function move() {
+            var gun = document.getElementById("gun");
+        }
+    </script>
+</head>
+<body onclick="shoot()" onmousemove="move()">
+    <marquee direction="left">
+        <img onclick="hit()" style="height:100px; width: 100px" src="https://thumbs.gfycat.com/BasicBothFish-max-1mb.gif">
+        <!-- <img style="height:100px; width: 100px" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/5d04ef14282093.56280fc4e27b3.gif "> -->
+    </marquee>
+    <div>
+        <div align="right">
+            <img id="gun" style="width: 50%;" src="../images/gun.png">
+        </div>
+    </div>
+    <audio id="bonk" src="../sounds/bonk.m4a" ></audio>
+    <audio id="scream" src="../sounds/scream.mp3"></audio>
+</body>
+</html>
