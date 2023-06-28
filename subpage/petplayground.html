@@ -24,7 +24,27 @@
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             text-shadow:0px 2px 4px black;
         }
+        #wrapper {
+            overflow: auto;
+        }
 
+        #left {
+            float: left;
+        }
+
+        #right {
+            float: right;
+        }
+        button {
+            background-color: red;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 50px;
+            border-radius: 15px;
+        }
     </style>
     <script>
         // Fun pet time!
@@ -39,13 +59,13 @@
                 alert("You neglected your pet! It has died.");
             }
         });
-        var pet_count = 0;
+        var pat_count = 0;
         function play() {
             var squish = document.getElementById("squish");
             var meow = document.getElementById("meow");
             var pat = document.getElementById("pat");
             var cat = document.getElementById("cat");
-            if (pet_count > 20){
+            if (pat_count > 20){
                 squish.play();
                 cat.src = "../images/squished.png";
                 if (!dead){
@@ -54,21 +74,59 @@
                 dead = true;
             } else {
                 pat.play();
-                if (!dead && pet_count % 4 == 0) {
+                if (!dead && pat_count % 4 == 0) {
                     meow.play();
                 }
             }
-            pet_count += 1;
+            pat_count += 1;
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function sellCat() {
+            var cat = document.getElementById("cat");
+            var cash = document.getElementById("cash");
+            cash.play();
+            // set cookie
+            var balance = getCookie("balance") + 1;
+            console.log(balance);
+            const d = new Date();
+            var days = 1;
+            d.setTime(d.getTime() + (days*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = "balance=" + balance + ";" + expires + ";path=/";
+            cat.style.display = "none";
+            dead = true;
         }
     </script>
 </head>
 <body>
     <h1>Play Time With Kitty!</h1>
     <h2>Take care of your new best friend</h2>
-    <input type="image" id="cat" onclick="play()" src="../images/alive.png"/>
+    <div id="wrapper">
+        <div id="left">
+            <input type="image" id="cat" onclick="play()" src="../images/alive.png"/>
+        </div>
+        <div id="right">
+            <button onclick="sellCat()">$$$ SELL $$$</button>
+        </div>
+    </div>
     <audio id="meow" src="../sounds/meow.m4a"></audio>
     <audio id="squish" src="../sounds/squish.m4a"></audio>
     <audio id="thud" src="../sounds/thud.m4a"></audio>
     <audio id="pat" src="../sounds/pat.m4a"></audio>
+    <audio id="cash" src="../sounds/cash.m4a"></audio>
 </body>
 </html>

@@ -58,9 +58,42 @@
         #toggle:checked:after {
             transform: translatex(20px)
         }
-
+        #balance {
+            background-color: #c0c0c0;
+            position:fixed;
+            top:0;
+            width:100%;
+            z-index:100;
+            display:hidden;
+        }
     </style>
     <script>
+        window.onload = function() {
+            var balance = getCookie("balance");
+            if (!balance == '') {
+                var balanceElem = document.getElementById("mybalance");
+                balanceElem.style.display = "block";
+                balanceElem.innerHTML = "eCoin Balance: " + balance;
+            } else {
+                console.log('what');
+            }
+        };
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            console.log(ca);
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
         function change() {
             var toggle = document.getElementById('toggle');
             var img = document.getElementById("img").style;
@@ -100,10 +133,13 @@
                 coords="548,273, 476,368, 492,467, 582,298"/>
             <area alt="pointer" href="./petplayground.html" shape="poly"
                 coords="256,90, 256,223, 274,299, 314,281, 294,87"/>
-            <area alt="ring finger" href="./morality.html" shape="poly"
-                coords="441,97, 389,267, 435,300, 475,105"/>
+            <!-- <area alt="ring finger" href="./morality.html" shape="poly"
+                coords="441,97, 389,267, 435,300, 475,105"/> -->
 
         <input type="checkbox" id="toggle" onclick="change();">
+    </div>
+    <div>
+        <p id="balance"></p>
     </div>
     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/rUlvQqbMeX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 </body>
