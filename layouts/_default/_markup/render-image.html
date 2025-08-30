@@ -1,0 +1,20 @@
+{{/* layouts/_default/_markup/render-image.html */}}
+{{ $alt := .Text }}
+{{ $width := "" }}
+
+{{ if in $alt "|" }}
+  {{ $parts := split $alt "|" }}
+  {{ $alt = index $parts 0 }}
+  {{ $width = index $parts 1 }}
+{{ end }}
+
+<p style="text-align:center;">
+  <img src="{{ .Destination | safeURL }}"
+       alt="{{ $alt }}"
+       style="
+         display:inline-block;
+         border-radius: 12px;
+         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+         {{ if $width }} max-width:{{ $width }}px;{{ else }}max-width:100%;{{ end }}
+       ">
+</p>
