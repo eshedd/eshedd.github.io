@@ -1,0 +1,11 @@
+<ul>
+  {{ range (where .Site.RegularPages "Section" "posts") }}
+    <li>
+      {{ .Date.Format "2006-01-02" }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a><br>
+      {{ with .Params.description }}
+        <small>{{ . }}</small>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>

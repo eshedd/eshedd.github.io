@@ -1,0 +1,5 @@
+<ul>
+    {{ range (where .Site.RegularPages "Section" "projects") }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
