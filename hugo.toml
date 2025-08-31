@@ -7,3 +7,7 @@ theme = 'xmin'
     dir = ':cacheDir/images'
 [params]
   footer = '&copy; Ethan Shedd 2025 -- {Year} | [Github](https://github.com/eshedd) | [LinkedIn](https://linkedin.com/in/ethanshedd/)'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
