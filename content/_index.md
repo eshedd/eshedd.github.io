@@ -8,9 +8,9 @@ title: Home
 
 ## _Que sais-je?_
 
-A robotics engineer working on general embodied AI in agriculture 🌾
+A robotics engineer working on general-purpose embodied AI in agriculture 🌾
 
-Generally fascinated with the systems governing our world—and the underlying structures that shape how we perceive and understand them. My interests range across neuroscience, language, ML, religion, psychology, music, and more.
+Generally fascinated with the systems governing our world—and the underlying structures that shape how we perceive and understand them. My interests range across neuroscience, language, machine learning, mathematics, psychology, religion, music, and more.
 
 <!-- ---
 ---
