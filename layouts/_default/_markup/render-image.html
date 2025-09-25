@@ -15,6 +15,6 @@
          display:inline-block;
          border-radius: 12px;
          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-         {{ if $width }} max-width:{{ $width }}px;{{ else }}max-width:100%;{{ end }}
+         max-width: min({{ if $width }}{{ $width }}px{{ else }}100%{{ end }}, 100%);
        ">
 </p>
