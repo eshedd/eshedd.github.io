@@ -2,7 +2,7 @@
 title: Home
 ---
 
-<img src="/hub/images/selfie.png" style="max-width:15%;min-width:40px;float:right;padding:20px"/>
+<img src="/images/selfie.png" style="max-width:15%;min-width:40px;float:right;padding:20px"/>
 
 # ETHAN SHEDD
 

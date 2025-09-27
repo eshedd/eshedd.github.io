@@ -1,4 +1,4 @@
-baseURL = 'https://eshedd.github.io/hub/'
+baseURL = 'https://eshedd.github.io/'
 languageCode = 'en-us'
 title = 'Ethan Shedd'
 theme = 'xmin'
@@ -6,7 +6,7 @@ theme = 'xmin'
   [caches.images]
     dir = ':cacheDir/images'
 [params]
-  footer = '&copy; Ethan Shedd 2025 -- {Year} | [Home](/hub) | [Github](https://github.com/eshedd) | [LinkedIn](https://linkedin.com/in/ethanshedd/)'
+  footer = '&copy; Ethan Shedd 2025 -- {Year} | [Home](/) | [Github](https://github.com/eshedd) | [LinkedIn](https://linkedin.com/in/ethanshedd/)'
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
