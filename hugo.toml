@@ -6,7 +6,7 @@ theme = 'xmin'
   [caches.images]
     dir = ':cacheDir/images'
 [params]
-  footer = '&copy; Ethan Shedd 2025 -- {Year} | [Home](/) | [Github](https://github.com/eshedd) | [LinkedIn](https://linkedin.com/in/ethanshedd/)'
+  footer = '&copy; Ethan Shedd 2025 -- {Year} | [Home](/) | [Github](https://github.com/eshedd) | [LinkedIn](https://linkedin.com/in/ethanshedd/) | [Resume](/resume.pdf)'
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
